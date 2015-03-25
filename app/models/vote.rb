@@ -1,6 +1,6 @@
 class Vote < ActiveRecord::Base
-
-	belongs_to :collaborator
-	belongs_to :project
+	has_one :project, :through => :projects_vote
+	has_one :user, :through => :projects_vote
+	has_one :projects_vote
 	
 end
